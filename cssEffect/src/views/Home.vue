@@ -3,22 +3,39 @@
         <div class="g-container">
             <h2>登录</h2>
             <div class="g-username">
-                <input name="loginPhoneOrEmail" maxlength="64" placeholder="请输入手机号或邮箱" class="input">
+                <input name="loginPhoneOrEmail" maxlength="64" placeholder="请输入手机号或邮箱" class="input" v-model="phone">
                 <img src="https://b-gold-cdn.xitu.io/v3/static/img/greeting.1415c1c.png" class="g-username">
             </div>
 
             <div class="g-password">
-                <input name="loginPassword" type="password" maxlength="64" placeholder="请输入密码" class="input">
+                <input name="loginPassword" type="password" maxlength="64" placeholder="请输入密码" class="input" v-model="password">
                 <img src="https://b-gold-cdn.xitu.io/v3/static/img/blindfold.58ce423.png" class="g-password">
             </div>
 
             <img src="https://b-gold-cdn.xitu.io/v3/static/img/normal.0447fe9.png" class="g-normal">
+            <Button size="large" type="primary" class="btn" @click="login">登錄</Button>
         </div>
     </div>
 </template>
 
 <script>
-export default {};
+export default {
+    data(){
+        return {
+            phone: '',
+            password: ''
+        }
+    },
+    methods: {
+        login(){
+            if(this.phone == '18912345678' && this.password == '123456'){
+                this.$router.push('/list');
+            }else{
+                this.$Message.error('请输入账号和密码！');
+            }
+        }
+    }
+};
 </script>
 
 <style lang="scss" scoped>
@@ -48,6 +65,9 @@ $bg-password: 'https://b-gold-cdn.xitu.io/v3/static/img/blindfold.58ce423.png';
         outline: none;
         box-sizing: border-box;
         font-size: 16px;
+    }
+    .btn{
+        margin-top: 30px;
     }
 }
 img {
