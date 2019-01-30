@@ -6,8 +6,8 @@
                 <p class="content">box-shadow 、 drop-shadow</p>
             </TimelineItem>
             <TimelineItem>
-                <p class="time">1984年</p>
-                <p class="content">发布 Macintosh</p>
+                <p class="time" @click="toBg">背景渐变动画</p>
+                <p class="content">Pure CSS3 Animated Gradient Background</p>
             </TimelineItem>
             <TimelineItem>
                 <p class="time">2007年</p>
@@ -35,6 +35,9 @@ export default {
     methods: {
         inItem(){
             this.$router.push('/boxshadow');
+        },
+        toBg(){
+            this.$router.push('/bg');
         }
     }
 }
