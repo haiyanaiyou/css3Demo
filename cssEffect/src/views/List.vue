@@ -10,8 +10,8 @@
                 <p class="content">Pure CSS3 Animated Gradient Background</p>
             </TimelineItem>
             <TimelineItem>
-                <p class="time">2007年</p>
-                <p class="content">发布 iPhone</p>
+                <p class="time" @click="toAnimation">动画效果</p>
+                <p class="content">css3 处理一些动画小效果</p>
             </TimelineItem>
             <TimelineItem>
                 <p class="time">2010年</p>
@@ -29,7 +29,7 @@
 export default {
     data(){
         return{
-
+            
         }
     },
     methods: {
@@ -38,6 +38,9 @@ export default {
         },
         toBg(){
             this.$router.push('/bg');
+        },
+        toAnimation(){
+            this.$router.push('/animation');
         }
     }
 }
@@ -47,6 +50,7 @@ export default {
 .timeList{
     width: 1300px;
     margin: 0 auto;
+    margin-top: 100px;
     .time{
         cursor: pointer;
     }

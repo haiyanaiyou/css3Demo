@@ -4,6 +4,7 @@ import Home from '@/views/Home.vue'
 import BoxShadow from '@/views/BoxShadow.vue'
 import List from '@/views/List.vue'
 import Bg from '@/views/bg.vue'
+import Animation from '@/views/Animation.vue'
 
 Vue.use(Router)
 
@@ -28,6 +29,11 @@ export default new Router({
       path: '/bg',
       name: 'Bg',
       component: Bg
+    },
+    {
+      path: '/animation',
+      name: 'Animation',
+      component: Animation
     }
   ]
 })
